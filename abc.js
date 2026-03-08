@@ -1,27 +1,22 @@
-import { PlaySource, useLocalization } from '@kingmakers/localization-utils';
+import Button from '@kingmakers/material-tailwind-next/Button';
+import Typography from '@kingmakers/material-tailwind/Typography';
+import { mapPlaySourceToSegmentPlatform } from '@kingmakers/segment/playSourceToPlatform';
+import { useLocalization } from '@kingmakers/localization-utils';
 import Button from '@kingmakers/material-tailwind-next/Button';
 import Typography from '@kingmakers/material-tailwind-next/Typography';
 import { mapPlaySourceToSegmentPlatform } from '@kingmakers/segment/playSourceToPlatform';
-import { DeepPick, useTranslations } from '@kingmakers/translations';
-import {
-  ActionFunction,
-  type ActionFunctionArgs,
-  LoaderFunction,
-  LoaderFunctionArgs,
-  redirect,
-} from '@remix-run/cloudflare';
+import { useLoaderData } from '@remix-run/react';
 import { useActionData, useLoaderData } from '@remix-run/react';
 import { withZod } from '@remix-validated-form/with-zod';
-import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import { ValidatedForm } from 'remix-validated-form';
 import { z as zod } from 'zod';
 
 const validator = withZod(
   zod.object({
-    username: zod.string().min(3),
+    username: zod.string(),
     userId: zod.string(),
-    password: zod.string().min(6),
+    password: zod.string().min(8),
   }),
 );
 
@@ -69,17 +64,24 @@ export const SelfExclusionPassword = () => {
   const messageId = `${ALERT_PREFIX}-${Date.now()}`;
 
   return (
-    <div className="px-2 flex flex-col bg-white flex-1">
+    <div className="px-4 flex flex-col bg-common-white flex-1">
       <ValidatedForm validator={validator} method="post" onSubmit={handleSubmit}>
-        <Typography variant="body1">Enter Password</Typography>
-
+        <Typography variant="h6">Enter your password</Typography>
+    
         <input
           name={PASSWORD_FIELD_NAME}
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
 
+        <Button type="submit" color="primary">
+          Continue
+        </Button>
+
+        <Typography>
+          Attempts remaining: {attemptsLeft} / {MAX_ATTEMPTS}
         <Button type="submit">Submit</Button>
+        </Typography>
 
         <Typography>
           Attempts Left: {Math.max(attemptsLeft, 0)} / {MAX_ATTEMPTS}
