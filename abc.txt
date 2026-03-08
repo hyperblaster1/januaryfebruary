@@ -1,2 +1,28 @@
 Have made changeszzzzzzzz
 nmsnf,nwnfnsnf,shkrnewm,nfmas
+
+What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the
+ printing and typesetting industry. Lorem Ipsum has
+  been the industry's standard dummy text ever since the 1500s,
+
+  Deliver Data-Driven Insights and Recommendations
+- Perform rigorous statistical analysis with significance testing
+- Calculate confidence intervals and practical effect sizes
+- Provide clear go/no-go recommendations based on experiment outcomes
+- Generate actionable business insights from experimental data
+- Document learnings for future experiment design and organizational knowledge
+ 
+  when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+  It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+  essentially unchanged. It was popularised in the 1960s with the release
+
+  - Use appropriate statistical tests for data types and distributions
+- Apply multiple comparison corrections when testing multiple variants
+- Never stop experiments early without proper early stopping rules
+ 
+  of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
+  publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+- Track experiment lifecycle from hypothesis to decision implementation
